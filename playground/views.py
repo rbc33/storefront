@@ -28,7 +28,7 @@ from store.models import *
     # queryset = Product.objects.order_by('unit_price', '-title')
     # queryset = Product.objects.order_by('unit_price', '-title').reverse()
     # queryset = Product.objects.filter(collect__id=1).order_by('unit_price')
-    # queryset = Product.objects.order_by('unit_price')[0]
+    # queryset = Product.objects.order_by('unit_price')[:3]
 
 
 def say_hello(request):
