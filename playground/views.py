@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.db.models import Q, F
+from django.db.models import Q, F  
+from django.db.models.aggregates import Count, Max, Min, Avg, Sum
 from store.models import *
 
     # # django ORM examples
@@ -47,9 +48,9 @@ from store.models import *
 
 def say_hello(request):
 
-    queryset = Order.objects.order_by('-placed_at')[:5].annotate(customer_first_name=Customer.objects.values('first_name')[:1],product_title=OrderItem.objects.values('product_title')[:1])
-)
-    return render(request, 'hello.html', {'name': 'moshi', 'products': (list(queryset) + list(queryset1))})
+    result = Product.objects.aaggregate(Count('id'))
+
+    return render(request, 'hello.html', {'name': 'moshi', 'products': result})
 
 if __name__ == '__main__' :
     say_hello()

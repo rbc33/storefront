@@ -5,10 +5,6 @@
         {% else %}
         <h1>Hello muthefoca</h1>
         {% endif %}
-        <ul>
-            {% for product in products %}
-            <li>{{product.customer.first_name}} - {{product.title}}</li>
-            {% endfor %}
-        </ul>
+        {{products}}
     </body>
 </html>
