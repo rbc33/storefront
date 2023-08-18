@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.db.models import Q, F  
-from django.db.models.aggregates import Count, Max, Min, Avg, Sum
+from django.db.models import Value, F, Func
+from django.db.models.functions import Concat
 from store.models import *
 
     # # django ORM examples
@@ -45,12 +45,18 @@ from store.models import *
     # queryset = Product.objects.prefetch_related('promotions').select_related('collection').all()
     # # select last 5 orders with customers and items (products)
     # queryset = Order.objects.select_related('customer').prefetch_related('orderitem_set__product').order_by('-placed_at')[:5]
+    # # Agregatting Objects
+    # queryset = Product.objects.filter(collection__id=3).aggregate(avg_price=Avg('unit_price'),min_price=Min('unit_price'),max_price=Max('unit_price'))
+    # # Annotating Objects
+    # queryset = Customer.objects.annotate(is_new=F('id')+ 1)
+    # # db.Functions
+    # queryset = Customer.objects.annotate(full_name=Func(F('first_name'), Value(' '), F('last_name'), function='CONCAT'))
+    # queryset = Customer.objects.annotate(full_name=Concat('first_name', Value(' '), 'last_name'))
 
 def say_hello(request):
 
-    result = Product.objects.aaggregate(Count('id'))
 
-    return render(request, 'hello.html', {'name': 'moshi', 'products': result})
+    return render(request, 'hello.html', {'name': 'moshi', 'result': list(queryset)})
 
 if __name__ == '__main__' :
     say_hello()
