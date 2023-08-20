@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from django.db.models import Value, F, Func
-from django.db.models.functions import Concat
+from django.contrib.contenttypes.models import ContentType
 from store.models import *
 
     # # django ORM examples
@@ -51,12 +50,33 @@ from store.models import *
     # queryset = Customer.objects.annotate(is_new=F('id')+ 1)
     # # db.Functions
     # queryset = Customer.objects.annotate(full_name=Func(F('first_name'), Value(' '), F('last_name'), function='CONCAT'))
-    # queryset = Customer.objects.annotate(full_name=Concat('first_name', Value(' '), 'last_name'))
+    # # queryset = Customer.objects.annotate(full_name=Concat('first_name', Value(' '), 'last_name'))
+    # # Grouping data
+    # queryset = Customer.objects.annotate(orders_count=Count('order'))
+    # # Expresion Wrapper
+    # discounted_price = ExpressionWrapper(F('unit_price') * 0.8, output_field=DecimalField())
+    # queryset = Product.objects.annotate(discounted_price=discounted_price)
+    # queryset = Customer.object.annotate(total_spent=F('order__orderitem__unit_price')*F('order__orderitem_quantity'))
+    # queryset = Product.objects.annotate(total_sold=F('orderitem__quantity') * F('orderitem__unit_price')).order_by('-total_sold')[:5]
+    # # adding method to tag.model for content_type relationships
+    # TaggedItem.objects.get_tags_for(Product, 1)
+    # # Creating objects (last line equal to the 4 previous but if you rename an instance, doesnt change automatically bc it's part of an argument)
+    # collection = Collection()
+    # collection.title = 'Video Games'
+    # collection.featured_product = Product(pk=1)
+    # collection.save()
+    # collection = Collection.objects.create(title='Video Games', featured_product_id=1)
 
 def say_hello(request):
+    collection = Collection.objects.get(pk=11)
+    
+    collection.featured_product = None
+    collection.save()
+    
+    # Collection.objects.filter(pk=11).update(featured_product=None)
 
 
-    return render(request, 'hello.html', {'name': 'moshi', 'result': list(queryset)})
+    return render(request, 'hello.html', {'name': 'moshi'})
 
 if __name__ == '__main__' :
     say_hello()
