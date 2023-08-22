@@ -93,6 +93,15 @@ DATABASES = {
         'PASSWORD': 'bOPEmisoP=s@t'
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'storefront',
+#         'HOST': 'rictatil.local',
+#         'USER': 'root',
+#         'PASSWORD': '0000'
+#     }
+# }
 
 
 # Password validation

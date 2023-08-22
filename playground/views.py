@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.db import transaction
 from django.contrib.contenttypes.models import ContentType
 from store.models import *
 
@@ -66,17 +67,56 @@ from store.models import *
     # collection.featured_product = Product(pk=1)
     # collection.save()
     # collection = Collection.objects.create(title='Video Games', featured_product_id=1)
+    # # Deleteting collection
+    # collection = Collection(pk=1)
+    # collection.delete()
+    # queryset = Collection.objects.filter(id__gt=5).delete()
+    # # Create cart
+    # cart = Cart()
+    # cart.save()
+    # item1 = CartItem()
+    # item1.cart= cart
+    # item1.quantity = 1
+    # item1.product_id = 1
+    # item1.save()
+    # # update quantity of item
+    # item1 = CartItem.objects.get(pk=1)
+    # item1.quantity = 2
+    # item.save()
+    # # Delete cart
+    # cart = Cart(pk=1)
+    # cart.delete()   # last 2 lines = to next line
+    # cart = Cart.objects.filter(pk=1).delete()
+# # Decorator @transaction.atomic() ensure each line and if one fails doesnt call the funcition
+# @transaction.atomic()
+# def say_hello(request):
+#     order = Order()
+#     order.customer_id = 1
+#     order.save()
+
+#     item = OrderItem()
+#     item.order = order
+#     item.product_id = 1
+#     item.quantity = 1
+#     item.unit_price = 10
+#     item.save()
+
+#     return render(request, 'hello.html', {'name': 'moshi', 'item1': item})
+
+# # Deleted all that shitty entries:
+# def say_hello(request):
+
+#     # code to execute before the content manager <transaction.atomic()>
+
+#     with transaction.atomic():
+#         order = Order()
+#         items_deleted = OrderItem.objects.filter(pk__lte=6, order__lte=1).delete()
+    # return render(request, 'hello.html', {'name': 'moshi', 'item1': items_deleted })
 
 def say_hello(request):
-    collection = Collection.objects.get(pk=11)
-    
-    collection.featured_product = None
-    collection.save()
-    
-    # Collection.objects.filter(pk=11).update(featured_product=None)
 
+    return render(request, 'hello.html', {'name': 'moshi', 'item1': items_deleted })
 
-    return render(request, 'hello.html', {'name': 'moshi'})
 
 if __name__ == '__main__' :
     say_hello()
