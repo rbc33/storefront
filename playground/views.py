@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.db import transaction
+from django.db import transaction, connection
 from django.contrib.contenttypes.models import ContentType
 from store.models import *
 
@@ -112,10 +112,21 @@ from store.models import *
 #         order = Order()
 #         items_deleted = OrderItem.objects.filter(pk__lte=6, order__lte=1).delete()
     # return render(request, 'hello.html', {'name': 'moshi', 'item1': items_deleted })
+    # # RAW SQL 
+    # queryset = Product.objects.raw('SELECT id, title FROM store_product')
+    # # example with a cursor object w/o a wrapper
+    # cursor = connection.cursor()
+    # cursor.execute('')
+    # cursor.close()
+    # #cursor with a wrapper
+    # with connection.cursor() as cursor:
+    #     cursor.execute('')
+    # #cursor with a wrapper
+    # with connection.cursor() as cursor:
+    #     cursor.callproc('get_customers', [1, 2, 'a'])
 
 def say_hello(request):
-
-    return render(request, 'hello.html', {'name': 'moshi', 'item1': items_deleted })
+    return render(request, 'hello.html', {'name': 'moshi', 'item1': list(queryset) })
 
 
 if __name__ == '__main__' :
