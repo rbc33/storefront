@@ -66,6 +66,7 @@ class CustomerAdmin(admin.ModelAdmin):
     def get_queryset(self, request):
         return super().get_queryset(request).annotate(
             orders_count=Count('order')
+        )
 
 
 # @admin.register(models.Customer)
@@ -105,4 +106,3 @@ class CustomerAdmin(admin.ModelAdmin):
     
     # def get_queryset(self, request):
     #     return super().get_queryset(request).annotate(orders_count=Count('order')      )
-        )
