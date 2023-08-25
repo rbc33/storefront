@@ -1,10 +1,8 @@
 from django.contrib import admin, messages
-from django.contrib.contenttypes.admin import GenericTabularInline
 from django.db.models.aggregates import Count
 from django.db.models.query import QuerySet
 from django.urls import reverse
 from django.utils.html import format_html, urlencode
-from tags.models import TaggedItem
 from . import models
 
 class InventoryFilter(admin.SimpleListFilter):
@@ -21,28 +19,6 @@ class InventoryFilter(admin.SimpleListFilter):
             return queryset.filter(inventory__lt=10)
 
 
-@admin.register(models.Collection)
-class CollectionAdmin(admin.ModelAdmin):
-    list_display = ['title', 'products_count']
-    search_fields = ['collection']
-
-    @admin.display(ordering='products_count')
-    def products_count(self, collection):
-        url = (
-            reverse('admin:store_product_changelist') 
-            + '?'
-            + urlencode({
-                'collection__id': str(collection.id)
-            }))
-        return format_html('<a href="{}">{}</a>', url, collection.products_count)
-    
-    def get_queryset(self, request):
-        return super().get_queryset(request).annotate(products_count=Count('product')      )
-
-class TagInLIne(GenericTabularInline):
-    autocomplete_fields = ['tag']
-    model = TaggedItem
-    extra = 0
 
 @admin.register(models.Product)
 class ProductAdmin(admin.ModelAdmin):
@@ -51,13 +27,12 @@ class ProductAdmin(admin.ModelAdmin):
         'slug': ['title']
     }
     actions = ['clear_inventory']
-    inlines = [TagInLIne]
     list_display = ['title', 'unit_price', 'inventory_status', 'collection_title']
     list_editable = ['unit_price']
     list_filter = ['collection', 'last_update', InventoryFilter]
     list_per_page = 10
     list_select_related = ['collection']
-    search_fields = ['product__istartswith']
+    search_fields = ['title']
 
     def collection_title(self, product):
         return product.collection.title
@@ -77,20 +52,24 @@ class ProductAdmin(admin.ModelAdmin):
             messages.ERROR
             )
 
-#other option: class OrderItemInline(admin.StackedInline)
-class OrderItemInline(admin.TabularInline):
-    autocomplete_fields = ['product']
-    min_num = 1
-    max_num = 10
-    model = models.OrderItem
-    extra = 0
+@admin.register(models.Collection)
+class CollectionAdmin(admin.ModelAdmin):
+    list_display = ['title', 'products_count']
+    search_fields = ['collection']
 
-@admin.register(models.Order)
-class OrderAdmin(admin.ModelAdmin):
-    autocomplete_fields = ['customer']
-    inlines = [OrderItemInline]               #add fields to order a item at order page so OrderItemInLine Inheritates from OrderAdmin class
-    list_display = ['id', 'placed_at', 'payment_status', 'customer']
+    @admin.display(ordering='products_count')
+    def products_count(self, collection):
+        url = (
+            reverse('admin:store_product_changelist') 
+            + '?'
+            + urlencode({
+                'collection__id': str(collection.id)
+            }))
+        return format_html('<a href="{}">{}</a>', url, collection.products_count)
     
+    def get_queryset(self, request):
+        return super().get_queryset(request).annotate(products_count=Count('product')      )
+
 
 @admin.register(models.Customer)
 class CustomerAdmin(admin.ModelAdmin):
@@ -115,3 +94,19 @@ class CustomerAdmin(admin.ModelAdmin):
             orders_count=Count('order')
         )
 
+
+#other option: class OrderItemInline(admin.StackedInline)
+class OrderItemInline(admin.TabularInline):
+    autocomplete_fields = ['product']
+    min_num = 1
+    max_num = 10
+    model = models.OrderItem
+    extra = 0
+
+
+@admin.register(models.Order)
+class OrderAdmin(admin.ModelAdmin):
+    autocomplete_fields = ['customer']
+    inlines = [OrderItemInline]               #add fields to order a item at order page so OrderItemInLine Inheritates from OrderAdmin class
+    list_display = ['id', 'placed_at', 'payment_status', 'customer']
+    
