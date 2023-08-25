@@ -126,7 +126,7 @@ from store.models import *
     #     cursor.callproc('get_customers', [1, 2, 'a'])
 
 def say_hello(request):
-    return render(request, 'hello.html', {'name': 'moshi', 'item1': list(queryset) })
+    return render(request, 'hello.html', {'name': 'moshi', 'item1': 'list(queryset)' })
 
 
 if __name__ == '__main__' :
