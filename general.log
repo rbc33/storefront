@@ -1,0 +1,76 @@
+Watching for file changes with StatReloader
+Cannot execute silk_profile as silk is not installed correctly.
+/Users/ric/pypro/storefront3/storefront/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Cannot execute silk_profile as silk is not installed correctly.
+/Users/ric/pypro/storefront3/storefront/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Cannot execute silk_profile as silk is not installed correctly.
+/Users/ric/pypro/storefront3/storefront/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Cannot execute silk_profile as silk is not installed correctly.
+Calling httpbin
+Recived response
+Calling httpbin
+Recived response
+/Users/ric/pypro/storefront3/storefront/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Cannot execute silk_profile as silk is not installed correctly.
+/Users/ric/pypro/storefront3/storefront/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Cannot execute silk_profile as silk is not installed correctly.
+/Users/ric/pypro/storefront3/storefront/settings.py changed, reloading.
+2023-09-14 14:51:29,622 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-09-14 14:51:29,705 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-09-14 14:51:59,468 (INFO) - playground.views - Calling httpbin
+2023-09-14 14:51:59,672 (INFO) - playground.views - Calling httpbin
+2023-09-14 14:51:59,863 (INFO) - playground.views - Calling httpbin
+2023-09-14 14:52:00,045 (INFO) - playground.views - Calling httpbin
+2023-09-14 14:52:02,033 (INFO) - playground.views - Recived response
+2023-09-14 14:52:02,164 (INFO) - playground.views - Recived response
+2023-09-14 14:52:02,357 (INFO) - playground.views - Recived response
+2023-09-14 14:52:02,514 (INFO) - playground.views - Recived response
+2023-09-14 14:52:04,987 (INFO) - playground.views - Calling httpbin
+2023-09-14 14:52:07,489 (INFO) - playground.views - Recived response
+2023-09-14 14:52:08,442 (INFO) - playground.views - Calling httpbin
+2023-09-14 14:52:11,042 (INFO) - playground.views - Recived response
+2023-09-14 15:12:33,036 (INFO) - django.utils.autoreload - /Users/ric/pypro/storefront3/manage.py changed, reloading.
+2023-09-14 15:28:16,790 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-09-14 15:28:16,892 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-09-14 15:29:29,440 (WARNING) - django.request - Not Found: /store/img/grid.png
+2023-09-14 15:29:37,852 (WARNING) - django.request - Not Found: /store/img/grid.png
+2023-09-14 15:30:07,995 (WARNING) - django.request - Unauthorized: /store/collections/
+2023-09-14 15:30:08,013 (WARNING) - django.request - Forbidden: /store/collections/
+2023-09-14 15:30:08,032 (WARNING) - django.request - Bad Request: /store/collections/
+2023-09-14 15:32:09,141 (WARNING) - django.request - Unauthorized: /store/collections/
+2023-09-14 15:32:09,163 (WARNING) - django.request - Forbidden: /store/collections/
+2023-09-14 15:32:09,180 (WARNING) - django.request - Bad Request: /store/collections/
+2023-09-14 15:33:34,084 (INFO) - django.utils.autoreload - /Users/ric/pypro/storefront3/storefront/settings/common.py changed, reloading.
+2023-09-14 15:33:34,410 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-09-14 15:33:34,481 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-09-14 15:33:48,991 (WARNING) - django.request - Unauthorized: /store/collections/
+2023-09-14 15:33:49,016 (WARNING) - django.request - Forbidden: /store/collections/
+2023-09-14 15:33:49,039 (WARNING) - django.request - Bad Request: /store/collections/
+2023-09-14 15:38:57,824 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-09-14 15:54:59,755 (WARNING) - django.request - Not Found: /static/core/styles.css
+2023-09-14 15:54:59,775 (WARNING) - django.request - Not Found: /static/core/logo.svg
+2023-09-21 07:19:32,306 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-09-21 07:19:32,410 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-09-21 07:22:16,763 (INFO) - django.utils.autoreload - /Users/ric/pypro/storefront/storefront/settings/dev.py changed, reloading.
+2023-09-21 07:22:17,067 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-09-21 07:22:17,140 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-09-21 07:22:27,468 (WARNING) - django.request - Not Found: /favicon.ico
+2023-09-21 07:23:53,928 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-09-21 07:24:16,226 (WARNING) - django.request - Not Found: /img/icon-addlink.svg
+2023-09-21 07:24:16,231 (WARNING) - django.request - Not Found: /img/icon-changelink.svg
+2023-09-21 07:24:19,741 (WARNING) - django.request - Not Found: /admin/store/img/icon-addlink.svg
+2023-09-21 07:24:19,748 (WARNING) - django.request - Not Found: /admin/store/img/tooltag-add.svg
+2023-09-21 07:24:19,750 (WARNING) - django.request - Not Found: /admin/store/img/sorting-icons.svg
+2023-09-21 07:24:37,125 (WARNING) - django.request - Not Found: /admin/store/img/icon-addlink.svg
+2023-09-21 07:24:37,166 (WARNING) - django.request - Not Found: /admin/store/img/sorting-icons.svg
+2023-09-21 07:24:37,167 (WARNING) - django.request - Not Found: /admin/store/img/tooltag-add.svg
+2023-09-21 07:24:42,395 (WARNING) - django.request - Not Found: /admin/store/img/tooltag-add.svg
+2023-09-21 07:24:42,398 (WARNING) - django.request - Not Found: /admin/store/img/icon-addlink.svg
+2023-09-21 07:24:44,814 (WARNING) - django.request - Not Found: /admin/store/img/icon-addlink.svg
+2023-09-21 07:24:44,816 (WARNING) - django.request - Not Found: /admin/store/img/tooltag-add.svg
+2023-09-21 07:24:44,830 (WARNING) - django.request - Not Found: /admin/store/img/sorting-icons.svg
