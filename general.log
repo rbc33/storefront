@@ -54,23 +54,8 @@ Cannot execute silk_profile as silk is not installed correctly.
 2023-09-14 15:38:57,824 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
 2023-09-14 15:54:59,755 (WARNING) - django.request - Not Found: /static/core/styles.css
 2023-09-14 15:54:59,775 (WARNING) - django.request - Not Found: /static/core/logo.svg
-2023-09-21 07:19:32,306 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
-2023-09-21 07:19:32,410 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
-2023-09-21 07:22:16,763 (INFO) - django.utils.autoreload - /Users/ric/pypro/storefront/storefront/settings/dev.py changed, reloading.
-2023-09-21 07:22:17,067 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
-2023-09-21 07:22:17,140 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
-2023-09-21 07:22:27,468 (WARNING) - django.request - Not Found: /favicon.ico
-2023-09-21 07:23:53,928 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
-2023-09-21 07:24:16,226 (WARNING) - django.request - Not Found: /img/icon-addlink.svg
-2023-09-21 07:24:16,231 (WARNING) - django.request - Not Found: /img/icon-changelink.svg
-2023-09-21 07:24:19,741 (WARNING) - django.request - Not Found: /admin/store/img/icon-addlink.svg
-2023-09-21 07:24:19,748 (WARNING) - django.request - Not Found: /admin/store/img/tooltag-add.svg
-2023-09-21 07:24:19,750 (WARNING) - django.request - Not Found: /admin/store/img/sorting-icons.svg
-2023-09-21 07:24:37,125 (WARNING) - django.request - Not Found: /admin/store/img/icon-addlink.svg
-2023-09-21 07:24:37,166 (WARNING) - django.request - Not Found: /admin/store/img/sorting-icons.svg
-2023-09-21 07:24:37,167 (WARNING) - django.request - Not Found: /admin/store/img/tooltag-add.svg
-2023-09-21 07:24:42,395 (WARNING) - django.request - Not Found: /admin/store/img/tooltag-add.svg
-2023-09-21 07:24:42,398 (WARNING) - django.request - Not Found: /admin/store/img/icon-addlink.svg
-2023-09-21 07:24:44,814 (WARNING) - django.request - Not Found: /admin/store/img/icon-addlink.svg
-2023-09-21 07:24:44,816 (WARNING) - django.request - Not Found: /admin/store/img/tooltag-add.svg
-2023-09-21 07:24:44,830 (WARNING) - django.request - Not Found: /admin/store/img/sorting-icons.svg
+2023-09-15 09:42:33,906 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-09-15 13:57:12,918 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-09-15 13:58:43,979 (WARNING) - django.request - Not Found: /favicon.ico
+2023-09-15 15:06:48,863 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-09-15 15:09:51,383 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader

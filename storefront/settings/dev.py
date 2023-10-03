@@ -5,16 +5,18 @@ DEBUG = True
 SECRET_KEY = 'django-insecure-hs6j037urx6iav+7#10%-vu4l4f5@@-1_zo)oft4g7$vf2$jmp'
 
 
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'storefront3',
-        'HOST': '192.168.0.100',
-        'USER': 'root',
-        'PORT': '33060',
-        'PASSWORD': 'MyPassword'
+        'HOST': 'db4free.net',
+        'USER': 'ricdeb',
+        'PORT': '3306',
+        'PASSWORD': '0055005544650227'
     }
 }
 
-# if DEBUG:
-#     MIDDLEWARE += ['silk.middleware.SilkyMiddleware',]
+if DEBUG:
+    MIDDLEWARE += ['silk.middleware.SilkyMiddleware',]
