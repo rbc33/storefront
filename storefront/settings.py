@@ -105,10 +105,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'storefront3',
-        'HOST': 'ricdeb.local',
+        'HOST': 'localhsot',
         'USER': 'root',
         'PORT': '33060',
-        'PASSWORD': 'bOPEmisoP=s@t'
+        'PASSWORD': 'root'
     }
 }
 
@@ -187,7 +187,7 @@ EMAIL_PORT = 2525
 DEFAULT_FROM_EMAIL = 'from@ricdeb.com'
 
 ADMINS = [
-    ('ric', 'admin@ricdeb.com')
+    ()
 ]
 
 CELERY_BROKER_URL = 'redis://ricdeb.local:6379/1'
